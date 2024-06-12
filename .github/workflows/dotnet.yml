@@ -13,9 +13,7 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
@@ -37,10 +35,8 @@ jobs:
         name: deploy-files
         path: ${{github.run_id}}.zip
   deploy:
-
     runs-on: ubuntu-latest
     needs: build
-
     steps:
     - uses: actions/download-artifact@v4.1.7
     - name: Configure AWS Credentials
